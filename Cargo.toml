@@ -1,0 +1,2 @@
+[workspace]
+members = ["rust-conflux-sdk", "tests"]
