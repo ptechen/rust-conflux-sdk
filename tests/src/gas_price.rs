@@ -5,7 +5,7 @@ use rust_conflux_sdk::traits::rpc_req::CommonRpcReq;
 use std::error::Error;
 
 #[tokio::test]
-async fn test_cfx_gas_price_testnet() -> Result<(), Box<dyn Error>> {
+async fn test_cfx_gas_price_testnet() -> CfxResult<()> {
     set_network(Network::CfxTest, None);
     println!("{}", CONFLUX_NETWORK.as_str());
     // let params = ConfluxParams::new("cfx_getBalance", vec!["cfx:aas53w71g7ahuztj66d9nzmjbz1s3gdceyau955pfz"]);
@@ -15,7 +15,7 @@ async fn test_cfx_gas_price_testnet() -> Result<(), Box<dyn Error>> {
 }
 
 #[tokio::test]
-async fn test_eth_gas_price_testnet() -> Result<(), Box<dyn Error>> {
+async fn test_eth_gas_price_testnet() -> CfxResult<()> {
     set_network(Network::EthTest, None);
     println!("{}", CONFLUX_NETWORK.as_str());
     // let params = ConfluxParams::new("cfx_getBalance", vec!["cfx:aas53w71g7ahuztj66d9nzmjbz1s3gdceyau955pfz"]);

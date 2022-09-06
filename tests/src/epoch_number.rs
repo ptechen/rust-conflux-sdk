@@ -2,7 +2,7 @@
 // use rust_conflux_sdk::network::{CONFLUX_NETWORK, Network, set_network};
 //
 // #[tokio::test]
-// async fn test_cfx_testnet() -> Result<(), Box<dyn Error>> {
+// async fn test_cfx_testnet() -> CfxResult<()> {
 //     set_network(Network::ConfluxTest, None);
 //     println!("{}", CONFLUX_NETWORK.as_str());
 //     // let params = ConfluxParams::new("cfx_getBalance", vec!["cfx:aas53w71g7ahuztj66d9nzmjbz1s3gdceyau955pfz"]);
@@ -13,7 +13,7 @@
 // }
 //
 // #[tokio::test]
-// async fn test_eth_testnet() -> Result<(), Box<dyn Error>> {
+// async fn test_eth_testnet() -> CfxResult<()> {
 //     set_network(Network::EthTest, None);
 //     println!("{}", CONFLUX_NETWORK.as_str());
 //     // let params = ConfluxParams::new("cfx_getBalance", vec!["cfx:aas53w71g7ahuztj66d9nzmjbz1s3gdceyau955pfz"]);
