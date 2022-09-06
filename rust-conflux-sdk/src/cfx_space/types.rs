@@ -61,3 +61,99 @@ pub struct TransactionReceipt {
     pub tx_exec_error_msg: Value,
 }
 
+#[derive(Default, Debug, Clone, PartialEq, Serialize, Deserialize)]
+pub struct TransactionByHash {
+    #[serde(rename = "blockHash")]
+    pub block_hash: String,
+    #[serde(rename = "chainId")]
+    pub chain_id: String,
+    #[serde(rename = "contractCreated")]
+    pub contract_created: Value,
+    pub data: String,
+    #[serde(rename = "epochHeight")]
+    pub epoch_height: String,
+    pub from: String,
+    pub gas: String,
+    #[serde(rename = "gasPrice")]
+    pub gas_price: String,
+    pub hash: String,
+    pub nonce: String,
+    pub r: String,
+    pub s: String,
+    pub status: String,
+    #[serde(rename = "storageLimit")]
+    pub storage_limit: String,
+    pub to: String,
+    #[serde(rename = "transactionIndex")]
+    pub transaction_index: String,
+    pub v: String,
+    pub value: String,
+}
+
+#[derive(Default, Debug, Clone, PartialEq, Serialize, Deserialize)]
+pub struct BlockByHash {
+    pub adaptive: bool,
+    pub blame: String,
+    #[serde(rename = "blockNumber")]
+    pub block_number: String,
+    pub custom: Vec<String>,
+    #[serde(rename = "deferredLogsBloomHash")]
+    pub deferred_logs_bloom_hash: String,
+    #[serde(rename = "deferredReceiptsRoot")]
+    pub deferred_receipts_root: String,
+    #[serde(rename = "deferredStateRoot")]
+    pub deferred_state_root: String,
+    pub difficulty: String,
+    #[serde(rename = "epochNumber")]
+    pub epoch_number: String,
+    #[serde(rename = "gasLimit")]
+    pub gas_limit: String,
+    #[serde(rename = "gasUsed")]
+    pub gas_used: String,
+    pub hash: String,
+    pub height: String,
+    pub miner: String,
+    pub nonce: String,
+    #[serde(rename = "parentHash")]
+    pub parent_hash: String,
+    #[serde(rename = "posReference")]
+    pub pos_reference: String,
+    #[serde(rename = "powQuality")]
+    pub pow_quality: String,
+    #[serde(rename = "refereeHashes")]
+    pub referee_hashes: Vec<String>,
+    pub size: String,
+    pub timestamp: String,
+    pub transactions: Vec<Value>,
+    #[serde(rename = "transactionsRoot")]
+    pub transactions_root: String,
+}
+
+#[derive(Default, Debug, Clone, PartialEq, Serialize, Deserialize)]
+pub struct Transaction {
+    #[serde(rename = "blockHash")]
+    pub block_hash: String,
+    #[serde(rename = "chainId")]
+    pub chain_id: String,
+    #[serde(rename = "contractCreated")]
+    pub contract_created: Value,
+    pub data: String,
+    #[serde(rename = "epochHeight")]
+    pub epoch_height: String,
+    pub from: String,
+    pub gas: String,
+    #[serde(rename = "gasPrice")]
+    pub gas_price: String,
+    pub hash: String,
+    pub nonce: String,
+    pub r: String,
+    pub s: String,
+    pub status: String,
+    #[serde(rename = "storageLimit")]
+    pub storage_limit: String,
+    pub to: String,
+    #[serde(rename = "transactionIndex")]
+    pub transaction_index: String,
+    pub v: String,
+    pub value: String,
+}

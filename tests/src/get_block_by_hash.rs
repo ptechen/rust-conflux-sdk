@@ -7,10 +7,10 @@ use std::error::Error;
 async fn test_cfx_testnet() -> Result<(), Box<dyn Error>> {
     set_network(Network::CfxTest, None);
     println!("{}", CONFLUX_NETWORK.as_str());
-    // let params = ConfluxParams::new("cfx_getBalance", vec!["cfx:aas53w71g7ahuztj66d9nzmjbz1s3gdceyau955pfz"]);
     let data = Cfx {}
-        .get_transaction_receipt(
-            "0x21430b1706883a696ff0c96d71459e765923b9da0c18ec4706ff4828a2d8fbbb",
+        .get_block_by_hash(
+            "0x7b3cd0620f366cb136a5de9d1c22dc9a56cd23fb0619c79e6df3bc3448dd07fd",
+            true
         )
         .await?;
     println!("{:?}", data);
@@ -21,10 +21,10 @@ async fn test_cfx_testnet() -> Result<(), Box<dyn Error>> {
 async fn test_eth_testnet() -> Result<(), Box<dyn Error>> {
     set_network(Network::EthTest, None);
     println!("{}", CONFLUX_NETWORK.as_str());
-    // let params = ConfluxParams::new("cfx_getBalance", vec!["cfx:aas53w71g7ahuztj66d9nzmjbz1s3gdceyau955pfz"]);
     let data = Eth {}
-        .get_transaction_receipt(
-            "0xb42eae78f3a63d99c23676e9659a8a6cb504dcd4c0e70f54f5f7a96a711ad26e",
+        .get_block_by_hash(
+            "0x2d4086e8fca0a4fb8b2a3d539009cdd50af8daa02fa5629d8843c7b62842f432",
+            false
         )
         .await?;
     println!("{:?}", data);

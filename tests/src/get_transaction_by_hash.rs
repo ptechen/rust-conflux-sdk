@@ -9,7 +9,7 @@ async fn test_cfx_testnet() -> Result<(), Box<dyn Error>> {
     println!("{}", CONFLUX_NETWORK.as_str());
     // let params = ConfluxParams::new("cfx_getBalance", vec!["cfx:aas53w71g7ahuztj66d9nzmjbz1s3gdceyau955pfz"]);
     let data = Cfx {}
-        .get_transaction_receipt(
+        .get_transaction_by_hash(
             "0x21430b1706883a696ff0c96d71459e765923b9da0c18ec4706ff4828a2d8fbbb",
         )
         .await?;
@@ -23,7 +23,7 @@ async fn test_eth_testnet() -> Result<(), Box<dyn Error>> {
     println!("{}", CONFLUX_NETWORK.as_str());
     // let params = ConfluxParams::new("cfx_getBalance", vec!["cfx:aas53w71g7ahuztj66d9nzmjbz1s3gdceyau955pfz"]);
     let data = Eth {}
-        .get_transaction_receipt(
+        .get_transaction_by_hash(
             "0xb42eae78f3a63d99c23676e9659a8a6cb504dcd4c0e70f54f5f7a96a711ad26e",
         )
         .await?;

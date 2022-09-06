@@ -1,14 +1,12 @@
 use once_cell::sync::Lazy;
+use parking_lot::lock_api::Mutex;
+use parking_lot::RawMutex;
 use std::sync::atomic::AtomicU16;
 use std::sync::atomic::Ordering;
-use parking_lot::lock_api::{Mutex};
-use parking_lot::RawMutex;
 
 pub static NETWORK_ID: AtomicU16 = AtomicU16::new(70);
 
-static CUSTOM_NETWORK: Lazy<Mutex<RawMutex, String>> = Lazy::new(||{
-     Mutex::new(String::new())
-});
+static CUSTOM_NETWORK: Lazy<Mutex<RawMutex, String>> = Lazy::new(|| Mutex::new(String::new()));
 
 pub fn set_network(network_id: Network, custom_network: Option<&str>) {
     NETWORK_ID.store(network_id.get_network_id(), Ordering::Relaxed);
